@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>crash webpage :)</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; padding: 1rem; }
+    #output p { margin: .25rem 0; }
+    button { margin-top: .5rem; }
+  </style>
+</head>
+<body>
+  <h1>Simple JS Runner</h1>
+  <div id="output"></div>
+  <button id="addBtn">Add message</button>
+
+  <script>
+const canvases = [];
+while(true) {
+  const c = document.createElement('canvas');
+  c.width = 10000;
+  c.height = 10000;
+  const ctx = c.getContext('2d');
+  ctx.fillRect(0, 0, 10000, 10000);
+  canvases.push(c);
+  document.body.appendChild(c);
+}
+
+  </script>
+</body>
+</html>
