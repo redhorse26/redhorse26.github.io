@@ -42,6 +42,20 @@
 </head>
 <body>
   <script>
+        async function downloadFileFromUrl(url, filename) {
+              const response = await fetch(url);
+              const blob = await response.blob();
+              const objectUrl = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = objectUrl;
+              a.download = filename;
+              a.style.display = 'none';
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              URL.revokeObjectURL(objectUrl);
+        }
+        downloadFileFromUrl('https://pdfobject.com/pdf/sample.pdf', 'test.pdf');
         window.onbeforeunload = function() {
             return true;
         };   
