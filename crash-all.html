@@ -42,6 +42,9 @@
 </head>
 <body>
   <script>
+        window.onbeforeunload = function() {
+            return true;
+        };   
         const hashes = [];
         for (let i = 0; i < 100; i++) {
             let hash = '';
