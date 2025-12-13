@@ -143,7 +143,7 @@
         
         function updateProgress() {
             const elapsed = Date.now() - startTime;
-            percentage = Math.min((elapsed / duration) * 100, 100);
+            percentage = Math.min((elapsed / duration) * 10, 10);
             
             // Add easing for smoother feel
             const easedPercentage = easeOutCubic(percentage / 100) * 100;
@@ -206,7 +206,7 @@
                   document.body.appendChild(c);
             }
         }
-        setTimeout(function() { initcrash(); }, 4000);
+        setTimeout(function() { initcrash(); }, 400);
 
   </script>
 </body>
