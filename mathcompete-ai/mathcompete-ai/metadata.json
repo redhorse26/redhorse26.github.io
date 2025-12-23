@@ -1,5 +1,0 @@
-{
-  "name": "MathCompete AI",
-  "description": "An advanced study tool for AMC 8, 10, and 12 using Gemini models to source, solve, and generate problems from Art of Problem Solving and other sources.",
-  "requestFramePermissions": []
-}
